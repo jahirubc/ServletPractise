@@ -6,7 +6,6 @@
 			<attribute name="maven.pomderived" value="true"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry kind="src" path="src/main/java/com.pondit"/>
 	<classpathentry excluding="java/|java/com.pondit/" kind="src" path="src/main"/>
 	<classpathentry kind="src" output="target/test-classes" path="src/test/java">
 		<attributes>

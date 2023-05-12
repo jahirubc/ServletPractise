@@ -1,25 +1,32 @@
 package com.pondit.model;
 
+import org.hibernate.annotations.CollectionId;
 
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+
+@Getter
+@Setter
+@Builder
+@Entity
+@AllArgsConstructor
 public class User {
-	private String name; 
-	private Integer age;
+	@Id
+	private long id;
+	@Column
+	private String name;
+	@Column
+	private String email;
+	@Column
+	private String password;
 	
-	public User () {}
-	public User(String name, Integer age) {
-		this.name = name;
-		this.age = age;
-	}
-	public String getName() {
-		return name;
-	}
-	public void setName(String name) {
-		this.name = name;
-	}
-	public Integer getAge() {
-		return age;
-	}
-	public void setAge(Integer age) {
-		this.age = age;
+	public User() {
+		
 	}
 }

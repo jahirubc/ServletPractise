@@ -3,6 +3,8 @@ import java.io.IOException;
 
 import com.pondit.model.User;
 
+//import com.pondit.model.User;
+
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
@@ -17,7 +19,9 @@ public class HelloServlet extends HttpServlet {
     	String name = req.getParameter("name");
     	Integer age = Integer.parseInt(req.getParameter("age"));
     	//User user = new User("Syed", 30);
-    	User user = new User(name, age);
+    	User user = User.builder()
+    					.name(name)
+    					.build();
     	req.setAttribute("user", user);  
     	req.getRequestDispatcher("hello.jsp").forward(req, resp);
     }
